@@ -3,10 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math/rand"
 	"os"
+	"time"
 )
 
-const prompt = "and press ENTER when ready"
+const prompt = "and don`t type your number in, just press ENTER when ready"
 
 func main() {
 
@@ -23,11 +25,16 @@ func main() {
 	   // скорочений варіант: оголосити назву, призначити значення та дозволити Go визначити тип
 	   subtraction := 7
 	*/
-	var firstNumber = 2
 
-	var secondNumber = 5
+	// seed the random number generator (передати рамдомне число)
+	rand.Seed(time.Now().UnixNano())
 
-	var subtraction = 7
+	var firstNumber = rand.Intn(8) + 2
+	// Intn(8) - ціле число від 0 (по замовчуванню) до 8
+
+	var secondNumber = rand.Intn(8) + 2
+
+	var subtraction = rand.Intn(8) + 2
 
 	var answer int
 
